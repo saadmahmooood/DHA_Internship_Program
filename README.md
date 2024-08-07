@@ -54,11 +54,15 @@ The DHA Internship Program Automation project aims to create a user-friendly web
    - Add the required environment variables (example provided in `.env.example`).
 
 4. **Run the Application:**
-npm start
+```bash
+   npm start
+   ```
 
 
-### Running Tests
-npm test
+4. **Runing Test:**
+```bash
+   npm test
+   ```
 
 
 ## Contribution Guidelines
