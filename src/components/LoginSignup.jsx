@@ -2,17 +2,17 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './loginsignup.css';
 const LoginSignup = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleButtonClick = () => {
-        navigate('/screen-two');
-    };
+  const handleButtonClick = () => {
+    navigate('/screen-two');
+  };
   return (
     <div className="App">
       <img className="im" src="src/assets/images/logo.png" alt="DHA Logo" />
       <div className="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
-        
+
         <div className="signup">
           <form>
             <label htmlFor="chk" aria-hidden="true">Signup</label>
@@ -33,12 +33,10 @@ const LoginSignup = () => {
             <button onClick={handleButtonClick} type="submit">Login</button>
           </form>
         </div>
+     
+      </div> </div>
 
-        <div className="title">
-          <h1>Start Your Career Journey</h1>
-        </div>
-      </div>
-    </div>
+
   );
 }
 

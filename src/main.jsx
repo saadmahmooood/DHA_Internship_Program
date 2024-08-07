@@ -13,8 +13,8 @@ const Main = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginSignup />} />
-        <Route path="/screen-two" element={<Form />} />
+        <Route path="/" element={<FinalResult/>} />
+        <Route path="/screen-two" element={<StudentDashboard />} />
       </Routes>
     </Router>
   );
