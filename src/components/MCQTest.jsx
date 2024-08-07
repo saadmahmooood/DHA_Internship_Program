@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './MCQTest.css';
 
 const questions = [
-  { id: 1, question: 'Question 1?', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
-  { id: 2, question: 'Question 2?', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
+  { id: 1, question: 'Which of the following data structures is the most efficient for implementing a priority queue?', options: ['Stack', 'Queue', 'Linked List', 'Heap'] },
+  { id: 2, question: 'In the Software Development Life Cycle (SDLC), what is the primary purpose of the "Design" phase?', options: ['To gather and analyze requirements', 'To write and test the code', 'To plan the project timeline and resources', 'To create the architecture and design specifications'] },
   // Add more questions as needed
 ];
 
@@ -55,6 +55,7 @@ const MCQTest = () => {
 
   return (
     <div className="mcq-test-container">
+      <img className="im" src="src/assets/images/logo.png" alt="DHA Logo" />
       <div className="test-header">
         <h1>MCQ Test</h1>
         <div className="timer">
