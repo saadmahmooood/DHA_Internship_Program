@@ -27,6 +27,7 @@ const ExcelTest = () => {
 
   return (
     <div className="excel-test-container">
+       <img className="im" src="src/assets/images/logo.png" alt="DHA Logo" />
       <div className="test-header">
         <h1>Excel Test</h1>
         <div className="timer">
