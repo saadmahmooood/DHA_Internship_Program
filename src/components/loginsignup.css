@@ -1,0 +1,133 @@
+/* Apply global styles to the root element */
+.App {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    background: url('src/assets/images/building.jpeg') no-repeat center center fixed;
+    overflow: hidden;
+    background-size: cover;
+  }
+
+.im {
+  position: absolute;
+  top: 20px; /* Adjust the top position if needed */
+  left: 20px; /* Adjust the left position if needed */
+  width: 100px; /* Adjust the width of the logo if needed */
+}
+
+.main {
+  width: 1300px;
+  height: 570px;
+  background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+  position: relative;
+}
+
+#chk {
+  display: none;
+}
+
+.signup {
+  position: relative;
+  width: 35%;
+  height: 100%;
+}
+
+label {
+  color: #fff;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+input {
+  width: 60%;
+  height: 10px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 60%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #02085a;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #02085a;
+}
+
+.login {
+  height: 500px;
+  background: #eee;
+  width: 35%;
+  border-radius: 60% / 10%;
+  transform: translateY(-180px);
+  transition: 0.8s ease-in-out;
+}
+
+.login label {
+  color: #02085a;
+  transform: scale(0.6);
+}
+
+#chk:checked ~ .login {
+  transform: translateY(-550px);
+  width: 35%;
+}
+
+#chk:checked ~ .login label {
+  transform: scale(1);
+}
+
+#chk:checked ~ .signup label {
+  transform: scale(0.6);
+}
+
+.title {
+  position: absolute;
+  right: 0;
+  width: 30%; /* Adjust as needed to fit the available space */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 2.5em;
+  text-align: center;
+}

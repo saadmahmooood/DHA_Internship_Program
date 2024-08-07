@@ -1,0 +1,76 @@
+/* Ensure the body takes up full height and width */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.final-result {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #f4f4f4;
+    /* Background color for the screen */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #02085a;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.result-table thead {
+    background-color: #02085a;
+    color: white;
+    font-weight: bold;
+}
+
+.result-table th,
+.result-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.result-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .result-table {
+        font-size: 14px;
+    }
+
+    .result-table th,
+    .result-table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .result-table {
+        font-size: 12px;
+    }
+
+    .result-table th,
+    .result-table td {
+        padding: 8px;
+    }
+}

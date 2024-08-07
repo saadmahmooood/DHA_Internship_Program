@@ -1,0 +1,152 @@
+/* Ensure the body takes up full height and width */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.student-list {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #02085a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar {
+    width: 90%;
+    max-width: 600px;
+    padding: 15px;
+    border: 2px solid #02085a;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #004080;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.student-table-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-grow: 1;
+    height: calc(100vh - 180px); /* Adjust height based on header and padding */
+    position: relative;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: #02085a;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #004080;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 12px;
+}
+
+.header-item {
+    padding: 12px;
+    text-align: center;
+    color: #f4f4f4;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 12px;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.row-item {
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.highlighted {
+    background-color: #ffffcc; /* Highlight color */
+    border: 2px solid #ffcc00; /* Highlight border color */
+}
+
+.interview-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #02085a;
+    border-radius: 8px;
+    font-size: 18px;
+    background: #f9f9f9;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interview-input:focus {
+    border-color: #004080;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button {
+    background-color: #02085a;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 30%;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center;
+    position: sticky;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.submit-button:hover {
+    background-color: #003366;
+    transform: scale(1.05);
+}
+
+.submit-button:active {
+    transform: scale(0.95);
+}
