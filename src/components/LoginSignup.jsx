@@ -9,7 +9,7 @@ const LoginSignup = () => {
     };
   return (
     <div className="App">
-      <img className="im" src="src/assets/images/logo.jpeg" alt="DHA Logo" />
+      <img className="im" src="src/assets/images/logo.png" alt="DHA Logo" />
       <div className="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
         
