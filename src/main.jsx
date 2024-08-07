@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginSignup from './components/LoginSignup';
 import Form from './components/Form';
-import UserDash from './components/UserDash';
+import AdminDashboard from './components/AdminDashboard';
+import StudentDashboard from './components/StudentDashboard';
 import StudentList from './components/AdminInterviewScreen';
+import ExcelTest from './components/ExcelTest';
 import FinalResult from './components/Result';
+import MCQTest from './components/MCQTest';
 const Main = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<StudentList />} />
+        <Route path="/" element={<LoginSignup />} />
         <Route path="/screen-two" element={<Form />} />
-        <Route path="/screen-three" element={<UserDash />} />
       </Routes>
     </Router>
   );
