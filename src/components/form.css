@@ -1,18 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #cfd9df, #e2ebf0);
+      margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    width: 100vw;
     height: 100vh;
-    margin: 0;
+    background: url('/assets/images/building.jpeg') no-repeat center center fixed;
+    overflow: hidden;
+    background-size: cover;
+    
 }
+label{
+    color: black;
+    font-size: 1.5vh;
+    margin-left: 0%;
+}
+.im {
+    position: absolute;
+    top: 20px; /* Adjust the top position if needed */
+    left: 20px; /* Adjust the left position if needed */
+    width: 100px; /* Adjust the width of the logo if needed */
+  }
+  
 .container {
     display: flex;
     width: 1200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
+    width: 130vh;
+    height: 99vh;
+
 }
 .form-left, .form-right {
     padding: 30px;
@@ -25,8 +45,14 @@ body {
     background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
     color: white;
 }
-h2 {
+.form-right label{
+    color:white;
+}
+h1 {
     margin-bottom: 20px;
+}
+.form-right h1{
+    color: white;
 }
 .form-group {
     margin-bottom: 15px;
@@ -90,11 +116,19 @@ select:hover option {
 .file-group input[type="file"] {
     border-bottom: none;
     padding: 0;
+    height: 2vh;
+}
+.form-group.file-group{
+    border-bottom: none;
+    margin-top: -20px;
+    height: 2vh;
 }
 .checkbox-group {
     display: flex;
     align-items: center;
+    margin-top: 35px;
 }
 .terms-label {
-    margin-left: 10px; /* Adjust the value as needed */
+    margin-left: 10px;
+    margin-top: 3px; /* Adjust the value as needed */
 }

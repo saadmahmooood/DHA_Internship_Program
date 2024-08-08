@@ -2,10 +2,11 @@ import React from 'react';
 import './form.css';
 
 const Form = () => {
-  return (
+   return (
     <div className="container">
+           <img className="im" src="src/assets/images/logo.png" alt="DHA Logo" />
       <div className="form-left">
-        <h2>Personal Information</h2>
+        <h1>Personal Information</h1>
         <div className="form-group">
           <label htmlFor="phone-number">Phone Number</label>
           <div className="phone-group">
@@ -44,7 +45,7 @@ const Form = () => {
         </div>
       </div>
       <div className="form-right">
-        <h2>Academic Information</h2>
+        <h1 className='right'>Academic Information</h1>
         <div className="form-group">
           <label htmlFor="cgpa">CGPA</label>
           <input type="text" id="cgpa" placeholder="e.g. 3.52" />
