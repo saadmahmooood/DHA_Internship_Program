@@ -1,246 +1,211 @@
-body {
+/* Reset and box-sizing styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
-  background-color: #f7f8fc;
 }
+.im {
+  position: absolute;
+  top: 20px; /* Adjust the top position if needed */
+  left: 20px; /* Adjust the left position if needed */
+  align-items: center;
 
+  width: 100px; /* Adjust the width of the logo if needed */
+}
 .dashboard-container {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  background-color: #fff;
+  font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full viewport height */
-  width: 100vw;  /* Full viewport width */
-  margin: 0;
-  padding: 0;
 }
 
-.header-section {
+.header {
   display: flex;
-  justify-content: space-between;
+  height: 15%;margin-left: 6%;
+  width: auto;
+  justify-content: flex-end;
   align-items: center;
-  padding: 10px 20px;
-  width: 100%;
+  background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
+  border-radius: 20px;
+  margin-bottom: 20px;
+
 }
 
 .profile-section {
   display: flex;
-  align-items: center;
+  
 }
 
-.profile-image {
+.profile-avatar {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
   margin-right: 10px;
 }
 
-.profile-info {
-  text-align: left;
-}
-
-.profile-info h2 {
-  font-weight: bold;
+.profile-info h4 {
   margin: 0;
+  font-size: 16px;
+  color: #ffff;
 }
 
 .profile-info p {
-  font-weight: lighter;
   margin: 0;
-}
-
-.logout-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
+  font-size: 14px;
+  color: #ffff;
 }
 
 .banner {
-  width: 47.61%;
-  height: 48%;
-  background: linear-gradient(to right, #888889, #2e2e46);
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  position: relative;
   box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .banner-content {
+  color: #ffff;
   display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.banner-date {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.date {
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.banner-text {
-  flex: 1;
-  text-align: left;
-  color: #333;
-  padding-left: 20px;
-}
-
-.banner-text h1 {
-  margin: 0;
+.welcome-message h1 {
   font-size: 24px;
-  font-weight: bold;
+  display: flex;
+  color: #ffff;
+  margin: 0;
 }
 
-.banner-text p {
-  margin: 5px 0 0;
+.welcome-message p {
   font-size: 16px;
+  margin: 0;
 }
 
 .banner-images {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
-.banner-image {
-  width: 60px;
-  height: 60px;
-}
-
-.avatar-large {
-  width: 80px;
-  height: 80px;
-}
-
-.dashboard-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 100%;
-  padding: 20px;
+.banner-images img {
+  margin: 0;
+  height: 100px; /* Adjust height as needed */
 }
 
 .main-content {
+  flex: 1;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  flex: 1;
+  align-items: flex-start;
 }
 
 .best-of-luck {
-  flex: 2;
-  text-align: center;
-  padding: 20px;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
 }
 
-.cards {
+.best-of-luck h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.card-container {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  justify-content: space-between;
+  gap: 10px; /* Ensures a small gap between cards */
 }
 
 .card {
-  background-color: #f0f0ff;
-  border-radius: 10px;
-  padding: 20px;
-  width: 200px;
+  width: 20%; /* Adjust width for compact appearance */
+  padding: 10px;
+  background: white;
+  border-radius: 10px; /* Smaller border-radius for a compact look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: left;
+}
+
+.card p {
+  font-size: 14px; /* Adjusted font size for compactness */
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .card img {
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60px; /* Adjust height for a reasonable size */
 }
 
-.start-button, .view-button {
-  background-color: #6a5acd;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+.card button {
   margin-top: 10px;
-  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: #02085a;
+  width: 30%;
+  border-radius: 14px; /* Smaller border-radius for a neater look */
+  cursor: pointer;
+  font-size: 12px; /* Smaller font size for a compact button */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  align-self: flex-start; /* Align button to the left */
+}
+
+.card button:hover {
+  background-color: #444;
 }
 
 .daily-notice {
-  flex: 1;
-  text-align: left;
+  width: 30%;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  box-sizing: border-box;
 }
 
-.notice-card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.notice-title {
-  font-weight: bold;
+.daily-notice h3 {
+  margin-bottom: 20px;
   font-size: 18px;
+  color: #333;
 }
 
-.notice-description {
-  font-family: 'Cathu', sans-serif;
+.notice-card h4 {
+  margin: 0;
   font-size: 16px;
+  color: #333;
 }
 
-@media (max-width: 768px) {
-  .header-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .banner {
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-  }
-
-  .banner-date {
-    position: relative;
-    top: auto;
-    left: auto;
-    margin-bottom: 10px;
-  }
-
-  .banner-text {
-    text-align: center;
-    padding-left: 0;
-  }
-
-  .banner-images {
-    margin-top: 10px;
-  }
-
-  .profile-section, .main-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 80%;
-    margin-bottom: 20px;
-  }
-
-  .daily-notice {
-    width: 100%;
-  }
+.notice-card p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #888;
 }

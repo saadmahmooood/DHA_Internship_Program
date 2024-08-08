@@ -7,11 +7,13 @@ import Form from './components/Form';
 import StudentList from './components/AdminInterviewScreen';
 import FinalResult from './components/Result';
 import MCQTest from './components/MCQTest';
+import ExcelTest from './components/ExcelTest';
+import StudentDashboard from './components/StudentDashboard';
 const Main = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MCQTest />} />
+        <Route path="/" element={<StudentDashboard />} />
         <Route path="/screen-two" element={<Form />} />
 
       </Routes>
