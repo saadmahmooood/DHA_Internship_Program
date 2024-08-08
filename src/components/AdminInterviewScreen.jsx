@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import './StudentList.css'; // Import the CSS file
 
 const studentsData = [
-    { id: 1, rollNo: '001', name: 'Alice', cgpa: 3.5, itMarks: 85, mcqMarks: 90 },
-    { id: 2, rollNo: '002', name: 'Bob', cgpa: 3.7, itMarks: 78, mcqMarks: 85 },
-    { id: 3, rollNo: '003', name: 'Charlie', cgpa: 3.9, itMarks: 92, mcqMarks: 88 },
-    { id: 4, rollNo: '404', name: 'David', cgpa: 3.6, itMarks: 88, mcqMarks: 92 },
-    { id: 5, rollNo: '005', name: 'Eve', cgpa: 3.8, itMarks: 91, mcqMarks: 87 },
-    { id: 6, rollNo: '001', name: 'Alice', cgpa: 3.5, itMarks: 85, mcqMarks: 90 },
-    { id: 7, rollNo: '002', name: 'Bob', cgpa: 3.7, itMarks: 78, mcqMarks: 85 },
-    { id: 8, rollNo: '003', name: 'Charlie', cgpa: 3.9, itMarks: 92, mcqMarks: 88 },
-    
+    { id: 1, rollNo: '001', name: 'Fatima', cgpa: 3.5, itMarks: 85, mcqMarks: 90 },
+    { id: 2, rollNo: '002', name: 'Bilal', cgpa: 3.7, itMarks: 78, mcqMarks: 85 },
+    { id: 3, rollNo: '003', name: 'Hassan', cgpa: 3.9, itMarks: 92, mcqMarks: 88 },
+    { id: 4, rollNo: '404', name: 'Osman', cgpa: 3.6, itMarks: 88, mcqMarks: 92 },
+    { id: 5, rollNo: '005', name: 'Zainab', cgpa: 3.8, itMarks: 91, mcqMarks: 87 },
+    { id: 6, rollNo: '001', name: 'Fatima', cgpa: 3.5, itMarks: 85, mcqMarks: 90 },
+    { id: 7, rollNo: '002', name: 'Bilal', cgpa: 3.7, itMarks: 78, mcqMarks: 85 },
+    { id: 8, rollNo: '003', name: 'Hassan', cgpa: 3.9, itMarks: 92, mcqMarks: 88 }
     
 ];
 
