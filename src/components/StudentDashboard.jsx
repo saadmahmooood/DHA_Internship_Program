@@ -9,16 +9,18 @@ import result from '/result.png';
 const StudentDashboard = () => {
     return (
         <div className="dashboard-container">
-                   <img className="im" src="src/assets/images/logo.png" alt="DHA Logo" />
+                  
             <div className="header">
- 
-                <div className="profile-section">
+            <img className="im" src="src/assets/images/logo.png" alt="DHA Logo" />
+            <h1>DHA Internship Portal</h1>
                     <img src={avatar} alt="Profile Avatar" className="profile-avatar" />
                     <div className="profile-info">
                         <h4>Saad Mahmood</h4>
                         <p>BS Software Engineering</p>
+                        <p>CGPA: 3.5</p>
+                        <p>CNIC: 35202-1936584-7</p>
                     </div>
-                </div>
+          
             </div>
    
             <div className="banner">
@@ -40,7 +42,7 @@ const StudentDashboard = () => {
             </div>
             <div className="main-content">
                 <div className="best-of-luck">
-                    <h3>Best of luck!</h3>
+                    <h1>Best of luck!</h1>
                     <div className="card-container">
                         <div className="card test-card">
                             <p>Test</p>
@@ -55,10 +57,18 @@ const StudentDashboard = () => {
                     </div>
                 </div>
                 <div className="daily-notice">
-                    <h3>Daily notice</h3>
+                    <h1>Daily notice</h1>
                     <div className="notice-card">
                         <h4>Result Announcement</h4>
                         <p>Result will be announced on 20th September</p>
+                    </div>
+                    <div className="notice-card">
+                        <h4>New Internship Opportunities</h4>
+                        <p>Check out the latest internship openings!</p>
+                    </div>
+                    <div className="notice-card">
+                        <h4>Workshop on AI</h4>
+                        <p>Join our workshop on AI and Machine Learning.</p>
                     </div>
                 </div>
             </div>

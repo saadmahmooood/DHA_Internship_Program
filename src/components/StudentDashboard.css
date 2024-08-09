@@ -21,7 +21,7 @@ body, html, #root {
   width: 100%;
   height: 100vh;
   padding: 20px;
-  background-color: #fff;
+
   font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ body, html, #root {
 
 .header {
   display: flex;
-  height: 15%;margin-left: 6%;
+  height: 15%;margin-left:0%;
   width: auto;
   justify-content: flex-end;
   align-items: center;
@@ -39,16 +39,22 @@ body, html, #root {
 
 }
 
-.profile-section {
-  display: flex;
-  
-}
 
 .profile-avatar {
+  
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  position: absolute;
+  top: 50px; /* Adjust the top position if needed */
+  left: 750px; /* Adjust the left position if needed */
+  align-items: center;  
+  color: #ffff;
 }
 
 .profile-info h4 {
@@ -56,7 +62,6 @@ body, html, #root {
   font-size: 16px;
   color: #ffff;
 }
-
 .profile-info p {
   margin: 0;
   font-size: 14px;
@@ -111,9 +116,27 @@ body, html, #root {
 }
 
 .banner-images img {
-  margin: 0;
-  height: 100px; /* Adjust height as needed */
+  height: 150px; /* Keep height as needed */
 }
+
+.banner-images img:nth-child(1) { /* Hat */
+  position: relative;
+  right: -100px;
+  z-index: 1;
+}
+
+.banner-images img:nth-child(2) { /* Avatar */
+  position: relative;
+  z-index: 2; /* Bring avatar to front */
+  margin-right: 250px; /* Adjust spacing to overlap slightly */
+}
+
+.banner-images img:nth-child(3) { /* Bag */
+  position: relative;
+  left: -340px;
+  z-index: 1;
+}
+
 
 .main-content {
   flex: 1;
@@ -128,84 +151,129 @@ body, html, #root {
   flex-direction: column;
 }
 
-.best-of-luck h3 {
+.best-of-luck h1 {
   margin-bottom: 20px;
-  font-size: 18px;
-  color: #333;
-}
-
-.card-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px; /* Ensures a small gap between cards */
+  font-size: 38px;
+  position: absolute;
+  top: 350px; /* Adjust the top position if needed */
+  left: 30px; /* Adjust the left position if needed */
+  align-items: center;
+  color: #ffff;
 }
 
 .card {
-  width: 20%; /* Adjust width for compact appearance */
-  padding: 10px;
-  background: white;
-  border-radius: 10px; /* Smaller border-radius for a compact look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 240px; /* Adjust width to match the screenshot */
+  height: 140px; /* Adjust height to match the screenshot */
+  padding: 20px; /* Ensure proper spacing within the card */
+  background: #f4f4f4; /* Light background to match the screenshot */
+  border-radius: 20px; /* Rounded corners for a smooth look */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
-  text-align: left;
+  justify-content: space-between; /* Ensure spacing between elements */
 }
 
 .card p {
-  font-size: 14px; /* Adjusted font size for compactness */
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 18px; /* Larger font size for better readability */
+  font-weight: bold;
+  color: #333; /* Dark text color */
+  margin: 0; /* Remove margin for tighter layout */
+  position: absolute;
+  top: 15px; /* Position text closer to the top */
+  left: 20px; /* Align text to the left */
 }
 
 .card img {
   position: absolute;
   right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 60px; /* Adjust height for a reasonable size */
+  top: 15px; /* Position the image inside the card */
+  height: 60px; /* Adjust image size */
 }
 
 .card button {
-  margin-top: 10px;
-  background-color: #333;
+  background-color: #02085a; /* Match the button color from the screenshot */
   color: white;
-  border: #02085a;
-  width: 30%;
-  border-radius: 14px; /* Smaller border-radius for a neater look */
+  border: none;
+  width: 100px; /* Fixed width for the button */
+  height: 35px; /* Fixed height for the button */
+  border-radius: 20px; /* Fully rounded button */
   cursor: pointer;
-  font-size: 12px; /* Smaller font size for a compact button */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  align-self: flex-start; /* Align button to the left */
+  font-size: 14px; /* Font size to match the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+  position: absolute;
+  bottom: 15px; /* Position button at the bottom of the card */
+  left: 20px; /* Align the button to the left within the card */
+  display: flex;
+  align-items: center; /* Center button content vertically */
+  justify-content: center; /* Center button content horizontally */
 }
 
 .card button:hover {
-  background-color: #444;
+  background-color: #1c206a; /* Slightly darker on hover */
 }
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%; /* Full width for proper alignment */
+  position: absolute;
+  top: 400px; /* Adjust the top position for better alignment */
+ right: 680px; /* Center the cards */
+  align-items: center;
+}
+
 
 .daily-notice {
-  width: 30%;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: calc(15% + 20px); /* Position below the banner */
+  right: 20px;
+  width: 18%;
+  top: 40%;
+  background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   box-sizing: border-box;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
-.daily-notice h3 {
-  margin-bottom: 20px;
-  font-size: 18px;
-  color: #333;
+.daily-notice h1 {
+  font-size: 30px;
+  color: #ffff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.notice-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Adds spacing between notices */
 }
 
 .notice-card h4 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
 }
 
 .notice-card p {
-  margin: 10px 0 0;
   font-size: 14px;
-  color: #888;
+  color: #666;
+  text-align: center;
 }
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
