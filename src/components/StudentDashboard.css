@@ -9,19 +9,19 @@ body, html, #root {
   height: 100%;
   width: 100%;
 }
+
 .im {
   position: absolute;
-  top: 20px; /* Adjust the top position if needed */
-  left: 20px; /* Adjust the left position if needed */
+  top: 20px;
+  left: 20px;
   align-items: center;
-
-  width: 100px; /* Adjust the width of the logo if needed */
+  width: 100px;
 }
+
 .dashboard-container {
   width: 100%;
   height: 100vh;
   padding: 20px;
-
   font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
@@ -29,19 +29,18 @@ body, html, #root {
 
 .header {
   display: flex;
-  height: 15%;margin-left:0%;
-  width: auto;
-  justify-content: flex-end;
+  height: 15%;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
   background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
   border-radius: 20px;
   margin-bottom: 20px;
-
+  padding: 10px;
+  position: relative;
 }
 
-
 .profile-avatar {
-  
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -50,43 +49,41 @@ body, html, #root {
 
 .header h1 {
   margin: 0;
-  position: absolute;
-  top: 50px; /* Adjust the top position if needed */
-  left: 750px; /* Adjust the left position if needed */
-  align-items: center;  
-  color: #ffff;
+  color: #fff;
+  text-align: center;
+  width: 100%;
 }
 
-.profile-info h4 {
-  margin: 0;
-  font-size: 16px;
-  color: #ffff;
+.profile-info {
+  text-align: right;
 }
-.profile-info p {
+
+.profile-info h4, .profile-info p {
   margin: 0;
   font-size: 14px;
-  color: #ffff;
+  color: #fff;
 }
 
 .banner {
   width: 100%;
-  height: 200px;
+  height: auto;
   background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  box-sizing: border-box;
   margin-bottom: 20px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .banner-content {
-  color: #ffff;
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 60%;
 }
 
 .date {
@@ -96,8 +93,7 @@ body, html, #root {
 
 .welcome-message h1 {
   font-size: 24px;
-  display: flex;
-  color: #ffff;
+  color: #fff;
   margin: 0;
 }
 
@@ -107,141 +103,116 @@ body, html, #root {
 }
 
 .banner-images {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  max-width: 40%;
+  flex-grow: 1;
 }
 
 .banner-images img {
-  height: 150px; /* Keep height as needed */
+  height: 100px; /* Adjusted for smaller screens */
+  margin: 0 5px;
 }
-
-.banner-images img:nth-child(1) { /* Hat */
-  position: relative;
-  right: -100px;
-  z-index: 1;
-}
-
-.banner-images img:nth-child(2) { /* Avatar */
-  position: relative;
-  z-index: 2; /* Bring avatar to front */
-  margin-right: 250px; /* Adjust spacing to overlap slightly */
-}
-
-.banner-images img:nth-child(3) { /* Bag */
-  position: relative;
-  left: -340px;
-  z-index: 1;
-}
-
 
 .main-content {
   flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .best-of-luck {
-  width: 65%;
+  width: 100%;
+  max-width: 70%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .best-of-luck h1 {
   margin-bottom: 20px;
-  font-size: 38px;
-  position: absolute;
-  top: 350px; /* Adjust the top position if needed */
-  left: 30px; /* Adjust the left position if needed */
-  align-items: center;
-  color: #ffff;
+  font-size: 28px;
+  color: #fff;
+}
+
+.card-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .card {
-  width: 240px; /* Adjust width to match the screenshot */
-  height: 140px; /* Adjust height to match the screenshot */
-  padding: 20px; /* Ensure proper spacing within the card */
-  background: #f4f4f4; /* Light background to match the screenshot */
-  border-radius: 20px; /* Rounded corners for a smooth look */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 100%;
+  max-width: 240px;
+  height: 140px;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensure spacing between elements */
+  justify-content: space-between;
 }
 
 .card p {
-  font-size: 18px; /* Larger font size for better readability */
+  font-size: 18px;
   font-weight: bold;
-  color: #333; /* Dark text color */
-  margin: 0; /* Remove margin for tighter layout */
+  color: #333;
+  margin: 0;
   position: absolute;
-  top: 15px; /* Position text closer to the top */
-  left: 20px; /* Align text to the left */
+  top: 15px;
+  left: 20px;
 }
 
 .card img {
   position: absolute;
   right: 15px;
-  top: 15px; /* Position the image inside the card */
-  height: 60px; /* Adjust image size */
+  top: 15px;
+  height: 60px;
 }
 
 .card button {
-  background-color: #02085a; /* Match the button color from the screenshot */
+  background-color: #02085a;
   color: white;
   border: none;
-  width: 100px; /* Fixed width for the button */
-  height: 35px; /* Fixed height for the button */
-  border-radius: 20px; /* Fully rounded button */
+  width: 100px;
+  height: 35px;
+  border-radius: 20px;
   cursor: pointer;
-  font-size: 14px; /* Font size to match the button */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: absolute;
-  bottom: 15px; /* Position button at the bottom of the card */
-  left: 20px; /* Align the button to the left within the card */
+  bottom: 15px;
+  left: 20px;
   display: flex;
-  align-items: center; /* Center button content vertically */
-  justify-content: center; /* Center button content horizontally */
+  align-items: center;
+  justify-content: center;
 }
 
 .card button:hover {
-  background-color: #1c206a; /* Slightly darker on hover */
+  background-color: #1c206a;
 }
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  width: 100%; /* Full width for proper alignment */
-  position: absolute;
-  top: 400px; /* Adjust the top position for better alignment */
- right: 680px; /* Center the cards */
-  align-items: center;
-}
-
 
 .daily-notice {
-  position: absolute;
-  top: calc(15% + 20px); /* Position below the banner */
-  right: 20px;
-  width: 18%;
-  top: 40%;
+  width: 100%;
+  max-width: 300px;
   background: linear-gradient(to bottom, #02085a, #2a2c70, #02085a);
   border-radius: 20px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  box-sizing: border-box;
   animation: fadeInUp 0.8s ease-in-out;
+  margin-top: 20px;
 }
 
 .daily-notice h1 {
-  font-size: 30px;
-  color: #ffff;
+  font-size: 24px;
+  color: #fff;
   margin-bottom: 15px;
   text-align: center;
 }
@@ -250,7 +221,7 @@ body, html, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px; /* Adds spacing between notices */
+  margin-bottom: 20px;
 }
 
 .notice-card h4 {
@@ -277,3 +248,72 @@ body, html, #root {
   }
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .banner-images img {
+    height: 80px;
+  }
+
+  .best-of-luck h1 {
+    font-size: 24px;
+  }
+
+  .card-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 16px;
+    left: 0;
+    position: relative;
+    transform: none;
+  }
+
+  .profile-info {
+    text-align: center;
+  }
+
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner-content {
+    max-width: 100%;
+  }
+
+  .banner-images {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .best-of-luck {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .daily-notice {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}

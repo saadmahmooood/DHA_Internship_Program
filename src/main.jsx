@@ -8,15 +8,14 @@ import StudentList from './components/AdminInterviewScreen';
 import ExcelTest from './components/ExcelTest';
 import FinalResult from './components/Result';
 import MCQTest from './components/MCQTest';
-
 import StudentDashboard from './components/StudentDashboard';
+
 const Main = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<StudentDashboard />} />
+        <Route path="/" element={<LoginSignup />} />
         <Route path="/screen-two" element={<Form />} />
-
       </Routes>
     </Router>
   );
