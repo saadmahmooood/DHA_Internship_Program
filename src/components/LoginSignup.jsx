@@ -12,6 +12,8 @@ const LoginSignup = () => {
     cpswd: '',
   });
 
+  const [message, setMessage] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -22,10 +24,16 @@ const LoginSignup = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/users/signup', userData);
-      console.log("Signup successful:", response.data);
-      navigate('/screen-two'); // Change to your desired screen after signup
+      setMessage(response.data.message);
+      setShowPopup(true);
+      if (response.status === 201) {
+        setTimeout(() => {
+          navigate('/');
+        }, 2000); // Redirect after 2 seconds
+      }
     } catch (error) {
-      console.error("Signup error:", error);
+      setMessage(error.response.data.message);
+      setShowPopup(true);
     }
   };
 
@@ -36,12 +44,26 @@ const LoginSignup = () => {
         CNIC: userData.CNIC,
         password: userData.password,
       });
-      console.log("Login successful:", response.data);
-      navigate('/screen-two'); // Change to your desired screen after login
+      setMessage(response.data.message);
+      setShowPopup(true);
+      if (response.status === 200) {
+        localStorage.setItem('token', response.data.token); // Save token in localStorage
+        setTimeout(() => {
+          navigate('/screen-two');
+        }, 2000); // Redirect after 2 seconds
+      }
     } catch (error) {
-      console.error("Login error:", error);
+      setMessage(error.response.data.message);
+      setShowPopup(true);
     }
   };
+
+  // Hide popup after 5 seconds
+  if (showPopup) {
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 5000);
+  }
 
   return (
     <div className="App">
@@ -69,6 +91,12 @@ const LoginSignup = () => {
             <button type="submit">Login</button>
           </form>
         </div>
+
+        {showPopup && (
+          <div className="popup-card">
+            <p>{message}</p>
+          </div>
+        )}
       </div>
     </div>
   );

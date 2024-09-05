@@ -1,19 +1,18 @@
+// src/App.js
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import LoginSignup from './LoginSignup';
+import NextPage from './NextPage'; // Replace with your protected route component
+import ProtectedRoute from './ProtectedRoute'; // Import the ProtectedRoute component
 
-const App = () => {
-  const history = useHistory();
-
-  const handleButtonClick = () => {
-    history.push('/screen-two');
-  };
-
-  return (
-    <div>
-      <h1>Screen One</h1>
-      <button onClick={handleButtonClick}>Go to Screen Two</button>
-    </div>
-  );
-};
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={LoginSignup} />
+      <ProtectedRoute path="/next-page" component={NextPage} />
+      {/* Add more protected routes as needed */}
+    </Switch>
+  </Router>
+);
 
 export default App;
