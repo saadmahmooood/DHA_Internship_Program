@@ -2,11 +2,32 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const multer = require('multer');
+const path = require('path');
 const router = express.Router();
 
+// Multer setup for file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage: storage });
+
 // User Signup
-router.post('/signup', async (req, res) => {
-  const { username, email, CNIC, password, cpswd } = req.body;
+router.post('/signup', upload.fields([
+  { name: 'photo', maxCount: 1 },
+  { name: 'transcript', maxCount: 1 },
+  { name: 'resume', maxCount: 1 }
+]), async (req, res) => {
+  const { username, email, CNIC, password, cpswd, college, marks, university, cgpa } = req.body;
+  const photo = req.files['photo'] ? req.files['photo'][0].path : null;
+  const transcript = req.files['transcript'] ? req.files['transcript'][0].path : null;
+  const resume = req.files['resume'] ? req.files['resume'][0].path : null;
 
   if (!username || !email || !CNIC || !password || !cpswd) {
     return res.status(400).json({ message: 'All fields are required' });
@@ -23,7 +44,9 @@ router.post('/signup', async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ username, email, CNIC, password: hashedPassword });
+    const newUser = new User({
+      username, email, CNIC, password: hashedPassword, college, marks, university, cgpa, photo, transcript, resume
+    });
     await newUser.save();
 
     res.status(201).json({ message: 'Signup successful. Please log in.' });

@@ -10,6 +10,13 @@ const LoginSignup = () => {
     CNIC: '',
     password: '',
     cpswd: '',
+    college: '',
+    marks: '',
+    university: '',
+    cgpa: '',
+    photo: null, // Passport-size photo
+    transcript: null, // PDF transcript
+    resume: null, // PDF resume
   });
 
   const [message, setMessage] = useState('');
@@ -17,13 +24,24 @@ const LoginSignup = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    const { name, value, files } = e.target;
+    if (name === 'photo' || name === 'resume' || name === 'transcript') {
+      setUserData({ ...userData, [name]: files[0] });
+    } else {
+      setUserData({ ...userData, [name]: value });
+    }
   };
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    for (const key in userData) {
+      formData.append(key, userData[key]);
+    }
     try {
-      const response = await axios.post('http://localhost:5000/api/users/signup', userData);
+      const response = await axios.post('http://localhost:5000/api/users/signup', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
       setMessage(response.data.message);
       setShowPopup(true);
       if (response.status === 201) {
@@ -58,7 +76,6 @@ const LoginSignup = () => {
     }
   };
 
-  // Hide popup after 5 seconds
   if (showPopup) {
     setTimeout(() => {
       setShowPopup(false);
@@ -72,16 +89,40 @@ const LoginSignup = () => {
         <input type="checkbox" id="chk" aria-hidden="true" />
 
         <div className="signup">
-          <form onSubmit={handleSignup}>
-            <label htmlFor="chk" aria-hidden="true">Signup</label>
-            <input type="text" name="username" placeholder="User name" onChange={handleChange} required />
-            <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-            <input type="text" name="CNIC" placeholder="CNIC" onChange={handleChange} required />
-            <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-            <input type="password" name="cpswd" placeholder="Confirm Password" onChange={handleChange} required />
-            <button type="submit">Sign up</button>
-          </form>
-        </div>
+  <form onSubmit={handleSignup} encType="multipart/form-data">
+    <label htmlFor="chk" aria-hidden="true">Signup</label>
+
+    <input type="text" name="username" placeholder="User name" onChange={handleChange} required />
+    <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+    <input type="text" name="CNIC" placeholder="CNIC" onChange={handleChange} required />
+
+    <select name="college" onChange={handleChange} required>
+      <option value="" disabled selected>Select College</option>
+      <option value="College A">College A</option>
+      <option value="College B">College B</option>
+      <option value="College C">College C</option>
+    </select>
+    
+    <input type="number" name="marks" placeholder="College Marks" onChange={handleChange} required />
+
+    <select name="university" onChange={handleChange} required>
+      <option value="" disabled selected>Select University</option>
+      <option value="University X">University X</option>
+      <option value="University Y">University Y</option>
+      <option value="University Z">University Z</option>
+    </select>
+
+    <input type="text" name="cgpa" placeholder="CGPA" onChange={handleChange} required />
+    <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+    <input type="password" name="cpswd" placeholder="Confirm Password" onChange={handleChange} required />
+
+    <input type="file" name="photo" accept="image/*" onChange={handleChange} required />
+    <input type="file" name="transcript" accept=".pdf" onChange={handleChange} required />
+
+    <button type="submit">Sign up</button>
+  </form>
+</div>
+
 
         <div className="login">
           <form onSubmit={handleLogin}>

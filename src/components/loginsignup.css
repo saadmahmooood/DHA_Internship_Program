@@ -43,7 +43,17 @@ position: relative;
 width: 35%;
 height: 100%;
 }
-
+select{
+  width: 60%;
+height: 7px;
+justify-content: center;
+display: flex;
+margin: 7px auto;
+padding: 6px;
+border: none;
+outline: none;
+border-radius: 5px;
+}
 label {
 color: #fff;
 font-size: 2.8em;
@@ -57,12 +67,11 @@ transition: 0.5s ease-in-out;
 
 input {
 width: 60%;
-height: 10px;
-background: #e0dede;
+height: 7px;
 justify-content: center;
 display: flex;
-margin: 20px auto;
-padding: 12px;
+margin: 7px auto;
+padding: 6px;
 border: none;
 outline: none;
 border-radius: 5px;
